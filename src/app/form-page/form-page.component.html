@@ -1,0 +1,27 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <label for="name">Name</label>
+    <input id="name" formControlName="name" />
+    <div *ngIf="contactForm.get('name')!.invalid && contactForm.get('name')!.touched">
+        Name is required.
+    </div>
+
+    <label for="email">Email</label>
+    <input id="email" formControlName="email" />
+    <div *ngIf="contactForm.get('email')!.invalid && contactForm.get('email')!.touched">
+        Enter a valid email.
+    </div>
+
+    <label for="street">Street</label>
+    <input id="street" formControlName="street" />
+    <div *ngIf="contactForm.get('street')!.invalid && contactForm.get('street')!.touched">
+        Street is required.
+    </div>
+
+    <label for="city">City</label>
+    <input id="city" formControlName="city" />
+    <div *ngIf="contactForm.get('city')!.invalid && contactForm.get('city')!.touched">
+        City is required.
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
